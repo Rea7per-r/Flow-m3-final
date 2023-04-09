@@ -1,0 +1,10 @@
+import MyContract from 0x05
+
+transaction (_name : String,_position: String) {
+
+  prepare(acct: AuthAccount) {}
+
+  execute {
+    MyContract.addFootballer(_name: _name, _position: _position)
+  }
+}

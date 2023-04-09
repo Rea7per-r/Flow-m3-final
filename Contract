@@ -1,0 +1,26 @@
+pub contract MyContract {
+    pub struct Footballer {
+        pub var name: String
+        pub var position: String
+        
+        init (name : String, position: String) {
+            self.name = name
+            self.position = position
+        }
+    }
+
+    pub var baller: {String: Footballer}
+    
+    init() {
+        self.baller = {}
+    }
+
+    pub fun addFootballer(_name: String,_position: String) {
+        let footballer = Footballer(name: _name,position: _position)
+        self.baller[_name] = footballer
+    }
+    
+    pub fun getFootballer(_name: String) : Footballer {
+        return self.baller[_name]!
+    }
+}
